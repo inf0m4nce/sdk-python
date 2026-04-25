@@ -1,10 +1,27 @@
+<div align="center">
+
 # Infomance Python SDK
 
-SDK oficial para integracao com a [Infomance API](https://api.infomance.com.br).
+**Official Python SDK for the Infomance API**
 
-Acesse dados de indicadores municipais brasileiros: economia, infraestrutura, saude, educacao, seguranca, emprego, agro e muito mais.
+*SDK oficial Python para a API Infomance*
 
-## Instalacao
+[![PyPI version](https://img.shields.io/pypi/v/infomance.svg?style=flat-square)](https://pypi.org/project/infomance/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/infomance.svg?style=flat-square)](https://pypi.org/project/infomance/)
+[![Python versions](https://img.shields.io/pypi/pyversions/infomance.svg?style=flat-square)](https://pypi.org/project/infomance/)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg?style=flat-square)](https://infomance.com.br/terms)
+
+[Documentation](https://api.infomance.com.br/docs) · [PyPI Package](https://pypi.org/project/infomance/) · [Report Bug](https://github.com/inf0m4nce/sdk-python/issues)
+
+</div>
+
+---
+
+Access Brazilian municipal indicators data: economy, infrastructure, health, education, security, employment, agriculture, and more.
+
+Acesse dados de indicadores municipais brasileiros: economia, infraestrutura, saúde, educação, segurança, emprego, agro e muito mais.
+
+## Installation / Instalação
 
 ```bash
 pip install infomance
