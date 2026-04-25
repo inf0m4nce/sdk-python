@@ -1,0 +1,133 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "infomance"
+version = "1.0.0"
+description = "Official SDK for Infomance API - Brazilian municipalities socioeconomic data | SDK oficial para a API Infomance - Dados socioeconômicos de municípios brasileiros"
+readme = "README.md"
+license = {text = "Proprietary"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Infomance", email = "contato@infomance.com.br"}
+]
+maintainers = [
+    {name = "Infomance", email = "suporte@infomance.com.br"}
+]
+keywords = [
+    "infomance",
+    "api",
+    "sdk",
+    "brazil",
+    "brasil",
+    "municipalities",
+    "municipios",
+    "indicators",
+    "indicadores",
+    "socioeconomic",
+    "geospatial",
+    "geoespacial",
+    "health",
+    "saude",
+    "education",
+    "educacao",
+    "security",
+    "seguranca",
+    "employment",
+    "emprego",
+    "agriculture",
+    "agro",
+    "comex",
+    "exports",
+    "ibge",
+    "data",
+    "dados",
+    "analytics",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Natural Language :: English",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Typing :: Typed",
+    "Framework :: AsyncIO",
+]
+dependencies = [
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.10.0",
+    "pytest-asyncio>=0.23.0",
+    "respx>=0.20.0",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://infomance.com.br"
+Documentation = "https://api.infomance.com.br/docs"
+Repository = "https://github.com/inf0m4nce/sdk-python"
+Changelog = "https://github.com/inf0m4nce/sdk-python/blob/main/CHANGELOG.md"
+Issues = "https://github.com/inf0m4nce/sdk-python/issues"
+
+[tool.setuptools.packages.find]
+include = ["infomance*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+asyncio_mode = "auto"
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4"]
+ignore = [
+    "UP007",  # Use X | Y for Union (requires Python 3.10+, we support 3.9)
+    "UP045",  # Use X | None (requires Python 3.10+, we support 3.9)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+
+[tool.coverage.run]
+source = ["infomance"]
+branch = true
+omit = ["*/tests/*", "*/__pycache__/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+    "@abstractmethod",
+]
+fail_under = 80
+show_missing = true
